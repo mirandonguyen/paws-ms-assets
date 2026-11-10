@@ -4,14 +4,13 @@ Stored assets for paws-ms-* projects (the paws.ms site and the Paws Discord bot)
 ## Layout
 
 ```
-classes/
-  gms/
-    classes/<class>/     one folder per GMS class (config.MAPLESTORY_CLASS_CHOICES on the site)
-    bosses/
-  classic/
-    classes/<class>/     MapleStory Classic, 3rd job classes only (no Pirates in Classic yet)
-  challenger/
-    bosses/
+gms/
+  classes/<class>/     one folder per GMS class (config.MAPLESTORY_CLASS_CHOICES on the site)
+  bosses/
+classic/
+  classes/<class>/     MapleStory Classic, 3rd job classes only (no Pirates in Classic yet)
+challenger/
+  bosses/
 ```
 
 Class folders are flat, not split by faction or archetype: faction groupings change over time and some classes
@@ -39,7 +38,7 @@ The repo is public, so Discord can load files straight from GitHub. For a `/clas
 the class's Image URL on the site's Bot Commands page:
 
 ```
-https://raw.githubusercontent.com/mirandonguyen/paws-ms-assets/main/classes/gms/classes/hero/guide.png
+https://raw.githubusercontent.com/mirandonguyen/paws-ms-assets/main/gms/classes/hero/guide.png
 ```
 
 Replacing a file under the same name updates every embed that uses it (Discord may show the old image for a
