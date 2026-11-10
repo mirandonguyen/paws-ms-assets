@@ -28,7 +28,7 @@ Folder names are the class name in lowercase, spaces become `-`, and `/`, `(` an
 | Arch Mage (F/P) | `arch-mage-fp` |
 | F/P Mage (Classic) | `fp-mage` |
 
-Use lowercase file names without spaces too (e.g. `infographic.png`). Empty folders hold a `.gitkeep` so git keeps them;
+Use lowercase file names without spaces too (e.g. `overview.png`). Empty folders hold a `.gitkeep` so git keeps them;
 it can be deleted once the folder has a real file.
 
 When a class is added to the site's config, add its folder here.
@@ -36,14 +36,16 @@ When a class is added to the site's config, add its folder here.
 ## Class guides (`/class`)
 
 paws.ms serves this repo at `/assets/` (a rewrite in the site's vercel.json), so a file at
-`gms/classes/hero/infographic.png` is `https://paws.ms/assets/gms/classes/hero/infographic.png`.
+`gms/classes/hero/overview.png` is `https://paws.ms/assets/gms/classes/hero/overview.png`.
 
 The Classes editor on the site's Bot Commands page fills these links in, so adding a file here is usually all it
 takes:
 
 | What | File | Link the editor fills in |
 |------|------|--------------------------|
-| Image | `<class>/infographic.png` | `https://paws.ms/assets/gms/classes/hero/infographic.png` |
+| Image | `<class>/overview.png` | `https://paws.ms/assets/gms/classes/hero/overview.png` |
+| Any other image, e.g. `hexa.png` | `<class>/<name>.png` / `.gif` / `.jpg` / `.webp` | a button named after the file ("Hexa"; `boss-guide.png` is "Boss Guide"), Origin and Ascent first; with no `overview.png`, `origin.gif` is the image instead |
+| Thumbnail (top right of `/class`) | `<class>/avatar.png` | none: always this file, left out until it exists |
 | A link button, e.g. "Bossing" | `<class>/<button name>.png` | `https://paws.ms/assets/gms/classes/hero/bossing.png` |
 | Shared buttons (Discord, class doc) | `gms/class-links.toml` | none: `/class` adds them itself, first |
 
@@ -65,3 +67,11 @@ class listed twice) stops it loading: `/class` then shows only each guide's save
 
 Replacing a file under the same name updates every embed that uses it (Discord may show the old image for a
 while from its cache; a new file name avoids that).
+
+## Credits
+
+Most class infographics (`overview.png`, `hexa.png`, `hexa-<variant>.png`, `culvert.png`, `sequence.png`) and the Origin / Ascent skill
+animations (`origin.gif`, `ascent.gif`) come from [Grandis Library](https://grandislibrary.com)
+([source](https://github.com/ikasuu/grandislibrary-next)), licensed under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). They are renamed to fit this repo's layout and
+otherwise unchanged. Keep this credit if you add more from there. MapleStory and its game art belong to Nexon.
