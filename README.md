@@ -6,7 +6,6 @@ Stored assets for paws-ms-* projects (the paws.ms site and the Paws Discord bot)
 ```
 gms/
   classes/<class>/     one folder per GMS class (config.MAPLESTORY_CLASS_CHOICES on the site)
-  class-links.toml     each GMS class's shared buttons: its Discord, class docs, sites
   bosses/
 classic/
   classes/<class>/     MapleStory Classic, 3rd job classes only (no Pirates in Classic yet)
@@ -47,23 +46,11 @@ takes:
 | Any other image, e.g. `hexa.png` | `<class>/<name>.png` / `.gif` / `.jpg` / `.webp` | a button named after the file ("Hexa"; `boss-guide.png` is "Boss Guide"), Origin and Ascent first; with no `overview.png`, `origin.gif` is the image instead |
 | Thumbnail (top right of `/class`) | `<class>/avatar.png` | none: always this file, left out until it exists |
 | A link button, e.g. "Bossing" | `<class>/<button name>.png` | `https://paws.ms/assets/gms/classes/hero/bossing.png` |
-| Shared buttons (Discord, class doc) | `gms/class-links.toml` | none: `/class` adds them itself, first |
 
 Button names become file names the same way class names become folders ("Boss Guide" → `boss-guide.png`).
 
-`class-links.toml` has one section per class, named exactly as the site spells it, with one `Label = "link"` line
-per button in the order they show (quote a name with spaces; `#` starts a note):
-
-```toml
-["Night Lord"]
-# Discord: apply with your Night Lord and wait for manual approval
-Discord = "https://discord.gg/AvP8wq4"
-"Class Doc" = "https://docs.google.com/document/d/..."
-```
-
-The site reads it only when the bot asks for a class guide, keeping it for an hour, so an edit shows up within the
-hour, or straight away after "Check paws-ms-assets" on the Classes editor. A mistake in the file (a missing quote, a
-class listed twice) stops it loading: `/class` then shows only each guide's saved links until it's fixed.
+Links that aren't files here (Discord servers, class docs, Grandis Library) are saved on each guide in the Classes
+editor; this repo holds images only.
 
 Replacing a file under the same name updates every embed that uses it (Discord may show the old image for a
 while from its cache; a new file name avoids that).
