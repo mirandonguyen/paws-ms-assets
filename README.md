@@ -34,11 +34,12 @@ When a class is added to the site's config, add its folder here.
 
 ## Using an image
 
-The repo is public, so Discord can load files straight from GitHub. For a `/class` guide, paste the raw URL into
+paws.ms serves this repo at `/assets/` (a rewrite in the site's vercel.json), so a file at `gms/classes/hero/guide.png`
+is `https://paws.ms/assets/gms/classes/hero/guide.png`. For a `/class` guide, paste that URL into
 the class's Image URL on the site's Bot Commands page:
 
 ```
-https://raw.githubusercontent.com/mirandonguyen/paws-ms-assets/main/gms/classes/hero/guide.png
+https://paws.ms/assets/gms/classes/hero/guide.png
 ```
 
 Replacing a file under the same name updates every embed that uses it (Discord may show the old image for a
